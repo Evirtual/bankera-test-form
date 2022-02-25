@@ -1,38 +1,207 @@
+textarea:focus,
+input:focus,
+select:focus{
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.25);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(0, 0, 0, 0.25);
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App.loading {
+  justify-content: center;
+}
+
+.Bankera-logo {
+  width: 14vmin;
+  height: 14vmin;
+  pointer-events: none;
+  margin-bottom: 1vmin;
+}
+
+.Bankera-loading {
+  color: #2EB2B9;
+}
+
+.Bankera-header {
+  background-color: #fff;
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin-bottom: 5vmin;
+}
+
+.Bankera-title {
+  color: #2EB2B9;
+  margin: 0;
+  line-height: 1;
+  margin-left: -3px;
+  font-size: 5.5vmin;
+  margin: 0 0 2.5vmin;
+}
+
+.Bankera-disclaimer {
+  color: rgba(46, 178, 185, 0.5);
+  font-size: 2vmin;
+  max-width: 60vmin;
+  margin: 0 0 2.5vmin;
+}
+
+.Bankera-time {
+  color: rgba(46, 178, 185, 0.5);
+  font-size: 2.5vmin;
+  max-width: 60vmin;
+  margin: 0;
+}
+
+.Bankera-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Bankera-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vmin;
+  border: 1px solid rgba(46, 178, 185, 0.5);
+  border-radius: 2vmin;
+  background-color: rgba(46, 178, 185, 0.025);
+}
+
+.Bankera-label{
+  display: flex;
+  margin-bottom: 3vmin;
+  position: relative;
+}
+
+.Bankera-label.BTC{
+  margin-right: auto;
+}
+
+.Bankera-label:last-child{
+  margin-bottom: 0;
+}
+
+.Bankera-span {
+  font-size: 2.5vmin;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 8vmin;
+  font-weight: bold;
+  padding: 1vmin;
+  color:white;
+  background-color: rgba(46, 178, 185, 0.5);
+  border-top-right-radius: 1vmin;
+  border-bottom-right-radius: 1vmin;
 }
 
-.App-link {
-  color: #61dafb;
+.Bankera-span.BTC{
+  color:rgba(247, 147, 26, 1);
+  background-color: rgba(247, 147, 26, 0.25);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Bankera-input {
+  padding: 1vmin;
+  border: 1px solid rgba(46, 178, 185, 0.25);
+  border-top-left-radius: 1vmin;
+  border-bottom-left-radius: 1vmin;
+  font-size: 2.5vmin;
+}
+
+.Bankera-input.BTC {
+  border-color: rgba(247, 147, 26, 0.25);
+}
+
+.Bankera-span.BTC{
+  border-color: rgba(247, 147, 26, 0.25);
+}
+
+.Bankera-input:focus,
+.Bankera-input:hover,
+.Bankera-input:active {
+  border-color:rgba(46, 178, 185, 1);
+}
+
+.Bankera-input.BTC:focus,
+.Bankera-input.BTC:hover,
+.Bankera-input.BTC:active{
+  border-color: rgba(247, 147, 26, 1);
+}
+
+.Bankera-select {
+  width: 100%;
+  padding: 1vmin;
+  border: 1px solid rgba(46, 178, 185, 0.25);
+  border-radius: 1vmin;
+  font-size: 2.5vmin;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Bankera-select:focus,
+.Bankera-select:hover,
+.Bankera-select:active {
+  border-color:rgba(46, 178, 185, 1);
+}
+
+.Bankera-button{
+  font-weight: bold;
+  border-radius: 50%;
+  width: 5.25vmin;
+  margin-left: 1vmin;
+  color:rgba(0, 0, 0, 0.5);;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 2vmin;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  opacity: 0.5;
+}
+.Bankera-button:focus,
+.Bankera-button:hover,
+.Bankera-button:active{
+  opacity: 1;
+}
+
+.Bankera-footer{
+  color:rgba(0, 0, 0, 0.25);
+  font-size: 2vmin;
 }
