@@ -1,5 +1,8 @@
 import './App.css';
 import logo from './bankera-min.png';
+import InputField from './comps/inputfield'
+import DynamicField from './comps/dynamicfield.js'
+import OptionField from './comps/optionfield'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -35,7 +38,12 @@ function App() {
   }, [])
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div className="App loading">
+         <img className="Bankera-logo" src={logo} alt="logo" />
+        <div className="Bankera-loading">Error: {error.message}</div>
+      </div>
+    )
 
   } else if (!isLoaded) {
     return (
@@ -90,61 +98,3 @@ function App() {
 }
 
 export default App;
-
-function InputField(props) {
-
-  const { rate, name, onClick, amount, setAmount } = props;
-
-  const formater = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: name
-  });
-
-  return (
-    <label className={`Bankera-label ${name}`}>
-      <input
-        className={`Bankera-input ${name}`}
-        type="number"
-        name={name}
-        placeholder={formater.format(Number(rate))}
-        value={amount || ''}
-        onChange={setAmount} />
-      <span className={`Bankera-span ${name}`}>{name}</span>
-      {name !== "BTC" && <button className={`Bankera-button ${name}`} onClick={onClick}>&#10005;</button>}
-    </label>
-  )
-}
-
-function DynamicField(props) {
-
-  const { name, onClick, amount, rate } = props;
-
-  const formater = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: name
-  });
-
-  return (
-    <div className={`Bankera-label ${name}`}>
-      <p className={`Bankera-converted ${name} ${isNaN(amount) || amount == 0 ? 'dimmed' : ''}`}>
-        {isNaN(amount) || amount == 0  ? formater.format(Number(rate)) : formater.format(Number(amount))}
-      </p>
-      <span className={`Bankera-span ${name}`}>{name}</span>
-      {name !== "BTC" && <button className={`Bankera-button ${name}`} onClick={onClick}>&#10005;</button>}
-    </div>
-  )
-}
-
-function OptionField(props) {
-
-  const { rate, name } = props;
-
-  const formater = name !== 'Add new currency' && new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: name
-  });
-
-  return (
-    <option className={`Bankera-option ${name}`} value={name}>{name}{rate && ` - ${formater.format(Number(rate))}`}</option>
-  )
-}
