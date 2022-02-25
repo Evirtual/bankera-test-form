@@ -77,24 +77,17 @@ select {
 }
 
 .Bankera-disclaimer {
-  color: rgba(46, 178, 185, 0.5);
+  color: rgba(46, 178, 185, 0.75);
   font-size: 2vmin;
   max-width: 60vmin;
   margin: 0 0 2.5vmin;
 }
 
 .Bankera-time {
-  color: rgba(46, 178, 185, 0.5);
+  color: rgba(46, 178, 185, 0.75);
   font-size: 2.5vmin;
   max-width: 60vmin;
   margin: 0;
-}
-
-.Bankera-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .Bankera-form {
@@ -106,11 +99,13 @@ select {
   border: 1px solid rgba(46, 178, 185, 0.5);
   border-radius: 2vmin;
   background-color: rgba(46, 178, 185, 0.025);
+  margin-bottom: 5vmin;
 }
 
 .Bankera-label{
   display: flex;
-  margin-bottom: 3vmin;
+  width: 100%;
+  margin-bottom: 3.5vmin;
   position: relative;
 }
 
@@ -141,7 +136,9 @@ select {
   background-color: rgba(247, 147, 26, 0.25);
 }
 
-.Bankera-input {
+.Bankera-input,
+.Bankera-converted {
+  width: 25vmin;
   padding: 1vmin;
   border: 1px solid rgba(46, 178, 185, 0.25);
   border-top-left-radius: 1vmin;
@@ -149,7 +146,21 @@ select {
   font-size: 2.5vmin;
 }
 
+.Bankera-input {
+  max-width: 30vmin;
+}
+
+.Bankera-converted {
+  display: flex;
+  flex: 1;
+  margin: 0;
+}
+.Bankera-converted.dimmed {
+  color: rgba(0, 0, 0, 0.25)
+}
+
 .Bankera-input.BTC {
+
   border-color: rgba(247, 147, 26, 0.25);
 }
 
@@ -171,7 +182,7 @@ select {
 
 .Bankera-select {
   width: 100%;
-  padding: 1vmin;
+  padding: 1.25vmin;
   border: 1px solid rgba(46, 178, 185, 0.25);
   border-radius: 1vmin;
   font-size: 2.5vmin;
@@ -187,7 +198,7 @@ select {
 .Bankera-button{
   font-weight: bold;
   border-radius: 50%;
-  width: 5.25vmin;
+  width: 5.5vmin;
   margin-left: 1vmin;
   color:rgba(0, 0, 0, 0.5);;
   background-color: rgba(0, 0, 0, 0.05);
