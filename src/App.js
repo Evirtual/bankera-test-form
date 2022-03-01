@@ -39,7 +39,7 @@ function App() {
 
   if (error) {
     return (
-      <div className="App loading">
+      <div className="Bankera-app loading">
          <img className="Bankera-logo" src={logo} alt="logo" />
         <div className="Bankera-loading">Error: {error.message}</div>
       </div>
@@ -47,7 +47,7 @@ function App() {
 
   } else if (!isLoaded) {
     return (
-      <div className="App loading">
+      <div className="Bankera-app loading">
          <img className="Bankera-logo" src={logo} alt="logo" />
         <div className="Bankera-loading">Loading...</div>
       </div>
@@ -64,7 +64,7 @@ function App() {
     }
 
     return (
-      <div className="App">
+      <div className="Bankera-app">
         <header className="Bankera-header">
           <h1 className="Bankera-title">Bankera Test Form</h1>
           <p className="Bankera-disclaimer">{api?.disclaimer}</p>

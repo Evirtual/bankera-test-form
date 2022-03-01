@@ -1,40 +1,4 @@
-textarea:focus,
-input:focus,
-select:focus{
-  outline: none;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(0, 0, 0, 0.25);
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: rgba(0, 0, 0, 0.25);
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: rgba(0, 0, 0, 0.25);
-}
-
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-}
-
-.App {
+.Bankera-app {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -43,7 +7,7 @@ select {
   min-height: 100vh;
 }
 
-.App.loading {
+.Bankera-app.loading {
   justify-content: center;
 }
 
@@ -159,8 +123,7 @@ select {
   color: rgba(0, 0, 0, 0.25)
 }
 
-.Bankera-input.BTC {
-
+.Bankera-input.BTC {  
   border-color: rgba(247, 147, 26, 0.25);
 }
 
